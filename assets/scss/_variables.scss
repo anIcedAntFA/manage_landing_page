@@ -1,0 +1,31 @@
+// Colors
+$brightRed: hsl(12, 88%, 59%);
+$darkBlue: hsl(228, 39%, 23%);
+$darkGrayishBlue: hsl(227, 12%, 61%);
+$veryDarkBlue: hsl(233, 12%, 13%);
+$veryPaleRed: hsl(13, 100%, 96%);
+$veryLightGray: hsl(0, 0%, 98%);
+$white: hsl(360, 100%, 100%);
+
+// Font Sizes
+$font-sm: 1.4rem;
+$font-med: 1.8rem;
+$font-lg: 3.2rem;
+$font-xlg: 5.8rem;
+
+// Font Weights
+$fontW-sm: 300;
+$fontW-med: 400;
+$fontW-lg: 500;
+$fontW-xlg: 700;
+
+// Transition
+$transition-all: all .4s ease-in-out;
+$transition-opacity: opacity .4s ease-in-out;
+$transition-color: color .4s ease-in-out;
+$transition-right: right .3s cubic-bezier(0,.5,0,1);
+
+// Opacity
+$opacity-1: 1;
+$opacity-8: .8;
+$opacity-0: 0;

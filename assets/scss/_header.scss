@@ -1,0 +1,64 @@
+.header {
+    position: relative;
+
+    z-index: 1;
+
+    nav {
+        position: relative;
+
+        padding-top: 1.6rem;
+        padding-bottom: 1.6rem;
+
+        background: $white;
+    }
+
+    a {
+        text-transform: uppercase;
+    }
+
+    &__logo {
+
+        img {
+            margin-top: 2rem;
+            width: 14.8rem;
+            height: 2.4rem;
+        }
+    }
+
+    &__links {
+
+        a {
+            position: relative;
+
+            font-size: $font-sm;
+            color: $darkBlue;
+            transition: $transition-color;
+
+            &:not(:last-child) {
+                margin-right: 3.2rem;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 100%;
+                bottom: -18px;
+
+                height: 5px;
+                display: block;
+                border-radius: 1.6rem;
+                background: $brightRed;
+                transition: $transition-right; 
+            }
+
+            &:hover {
+                color: $brightRed;
+
+                &::before {
+                    right: 0;
+                }
+            }
+        }
+    }
+}

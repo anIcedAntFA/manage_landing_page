@@ -1,0 +1,90 @@
+html {
+    font-size: 62.5%;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Ubuntu', sans-serif;
+    font-size: $font-med;
+    font-weight: fontW-sm;
+    line-height: 1.4;
+    color: $darkGrayishBlue;
+}
+
+// Flexbox
+.flex {
+    display: flex;
+
+    &-ai-c {
+        align-items: center;
+    }
+
+    &-jc-c {
+        justify-content: center;
+    }
+
+    &-jc-sb {
+        justify-content: space-between;
+    }
+}
+
+// Text
+a {
+    text-decoration: none;
+}
+
+// Spacing
+.container {
+    margin: 0 auto; // left, right auto balance 2 side
+    max-width: 111rem;
+
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+
+    &-pall {
+    //    padding-top: 5.6rem;
+    //    padding-left: 16.4rem;
+    //    padding-right: 16.4rem;
+    //    padding-bottom: 5.6rem;
+    }
+}
+
+// Button
+.btn {
+    position: relative;
+    padding: 1.7rem 3rem;
+
+    border-radius: 50px;
+    font-size: $font-sm;
+    font-weight: fontW-med;
+    cursor: pointer;
+    transition: $transition-opacity;
+
+    &:hover {
+        opacity: $opacity-8;
+    }
+
+    &-orange {
+        background-color: $brightRed;
+        color: $white;
+    }
+}
+
+// Visibility
+.hide-for-mobile {
+    @include breakpoint-down(medium) {
+        display: none;
+    }
+}
+
+.hide-for-desktop {
+    @include breakpoint-up(large) {
+        display: none;
+    }
+}
