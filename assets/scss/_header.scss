@@ -1,7 +1,18 @@
 .header {
     position: relative;
 
+    // overflow: hidden;
     z-index: 1;
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        
+        background: linear-gradient($darkGrayishBlue, transparent);
+    }
 
     nav {
         position: relative;
@@ -9,7 +20,7 @@
         padding-top: 1.6rem;
         padding-bottom: 1.6rem;
 
-        background: $white;
+        // background: $white;
     }
 
     a {
@@ -25,6 +36,7 @@
         }
     }
 
+    // Desktop Menu Links
     &__links {
 
         a {
@@ -59,6 +71,65 @@
                     right: 0;
                 }
             }
+        }
+    }
+
+    &__toggle {
+
+        overflow: hidden;
+
+        span {
+            width: 2.6rem;
+            height: .4rem;
+            display: block;
+
+            border-radius: .6rem;
+            background-color: $darkBlue;
+            transition: $transition-all;
+
+            &:not(:last-child) {
+                margin-bottom: .4rem;
+            }
+        }
+    }
+
+    // Toggle Open Style
+    &.open {
+
+        .header__toggle {
+
+            span:first-child {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            span:nth-child(2) {
+                transform: translateX(50px)
+            }
+
+            span:last-child {
+                transform: translateY(-8px) rotate(315deg);
+            }
+        }
+    }
+
+    // Mobile Menu Links
+    &__menu {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+
+        margin-top: 2.4rem;
+        padding: 2.6rem;
+        width: calc(100% - 4.8rem);
+        border-radius: 6px;;
+        background-color: $white;
+
+        a {
+            text-align: center;
+            display: block;
+            padding: 1rem;
+            font-weight: $fontW-lg;
+            color: $darkBlue;
         }
     }
 }

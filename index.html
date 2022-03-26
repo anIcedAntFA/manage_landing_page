@@ -12,8 +12,15 @@
 
   </head>
   <body>
+    <!-- Background Pattern -->
+    <div class="bg-container">
+      <div class="bg-pattern bg-1"></div>
+      <div class="bg-pattern bg-2"></div>
+    </div>
+  
     <!-- Begin: Header Section -->
     <header class="header">
+      <div class="overlay has-fade"></div>
 
       <!-- Navigation Bar -->
       <nav class="container container-pall flex flex-ai-c flex-jc-sb">
@@ -33,8 +40,24 @@
         </div>
 
         <!-- Desktop Cta Button -->
-        <a href="" class="header__cta btn btn-orange hide-for-mobile">Get Started</a>
+        <a href="#" class="header__cta btn btn-orange hide-for-mobile">Get Started</a>
+
+        <!-- Mobile Menu Toggle -->
+        <a id="btnHamburger" href="#" class="header__toggle hide-for-desktop">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
       </nav>
+
+      <!-- Mobile Menu Links -->
+      <div class="header__menu has-fade hide-for-desktop">
+        <a href="">Pricing</a>
+        <a href="">Product</a>
+        <a href="">About Us</a>
+        <a href="">Careers</a>
+        <a href="">Community</a>
+      </div>
     </header>
     <!-- End: Header Section -->
 

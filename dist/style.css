@@ -1,3 +1,77 @@
+.has-fade {
+  visibility: hidden;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  1% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  1% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  -webkit-animation: fadeIn .2s ease-in-out forwards;
+          animation: fadeIn .2s ease-in-out forwards;
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  99% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  99% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.fade-out {
+  -webkit-animation: fadeOut .2s ease-in-out forwards;
+          animation: fadeOut .2s ease-in-out forwards;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -15,6 +89,10 @@ body {
   font-weight: fontW-sm;
   line-height: 1.4;
   color: #9095a7;
+}
+
+body.no-scroll {
+  overflow: hidden;
 }
 
 .flex {
@@ -84,16 +162,84 @@ a {
   }
 }
 
+.bg-container {
+  position: absolute;
+  overflow: hidden;
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2000px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.bg-container .bg-pattern {
+  position: absolute;
+  background-image: url("../assets/images/bg-tablet-pattern.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center top;
+  z-index: -1;
+}
+
+.bg-container .bg-1 {
+  width: 100%;
+  height: 700px;
+  -webkit-transform: translateX(410px) translateY(-80px);
+          transform: translateX(410px) translateY(-80px);
+}
+
+@media (max-width: 63.9375em) {
+  .bg-container .bg-1 {
+    width: 100%;
+    height: 450px;
+    -webkit-transform: translateX(100px) translateY(-130px);
+            transform: translateX(100px) translateY(-130px);
+  }
+}
+
+.bg-container .bg-2 {
+  opacity: 1;
+  width: 100%;
+  height: 700px;
+  -webkit-transform: translateX(-810px) translateY(1125px);
+          transform: translateX(-810px) translateY(1125px);
+}
+
+@media (max-width: 63.9375em) {
+  .bg-container .bg-2 {
+    opacity: 1;
+    width: 100%;
+    height: 400px;
+    -webkit-transform: translateX(202px) translateY(530px);
+            transform: translateX(202px) translateY(530px);
+  }
+}
+
 .header {
   position: relative;
   z-index: 1;
+}
+
+.header .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#9095a7), to(transparent));
+  background: linear-gradient(#9095a7, transparent);
 }
 
 .header nav {
   position: relative;
   padding-top: 1.6rem;
   padding-bottom: 1.6rem;
-  background: white;
 }
 
 .header a {
@@ -138,5 +284,58 @@ a {
 
 .header__links a:hover::before {
   right: 0;
+}
+
+.header__toggle {
+  overflow: hidden;
+}
+
+.header__toggle span {
+  width: 2.6rem;
+  height: .4rem;
+  display: block;
+  border-radius: .6rem;
+  background-color: #242d52;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.header__toggle span:not(:last-child) {
+  margin-bottom: .4rem;
+}
+
+.header.open .header__toggle span:first-child {
+  -webkit-transform: translateY(8px) rotate(45deg);
+          transform: translateY(8px) rotate(45deg);
+}
+
+.header.open .header__toggle span:nth-child(2) {
+  -webkit-transform: translateX(50px);
+          transform: translateX(50px);
+}
+
+.header.open .header__toggle span:last-child {
+  -webkit-transform: translateY(-8px) rotate(315deg);
+          transform: translateY(-8px) rotate(315deg);
+}
+
+.header__menu {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  margin-top: 2.4rem;
+  padding: 2.6rem;
+  width: calc(100% - 4.8rem);
+  border-radius: 6px;
+  background-color: white;
+}
+
+.header__menu a {
+  text-align: center;
+  display: block;
+  padding: 1rem;
+  font-weight: 500;
+  color: #242d52;
 }
 /*# sourceMappingURL=style.css.map */

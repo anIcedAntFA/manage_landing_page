@@ -15,6 +15,10 @@ body {
     font-weight: fontW-sm;
     line-height: 1.4;
     color: $darkGrayishBlue;
+
+    &.no-scroll {
+        overflow: hidden;
+    }
 }
 
 // Flexbox
